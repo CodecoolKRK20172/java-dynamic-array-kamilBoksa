@@ -59,6 +59,18 @@ class DynamicIntArrayTest {
         assertEquals(result, array.toString());
     }
 
+    @Test
+    void findTest() {
+        DynamicIntArray array = createArray(10000);
+        int expected = 2000;
+        long startTime = System.nanoTime();
+        int actual = array.find(2000);
+        long endTime = System.nanoTime();
+        long elapsedTime = endTime - startTime;
+        System.out.println("Elapsed find time: " + elapsedTime);
+        assertEquals(expected, actual);
+    }
+
     private DynamicIntArray createArray(int numOfElements) {
         DynamicIntArray array = new DynamicIntArray();
         for (int i = 0; i < numOfElements; ++i)

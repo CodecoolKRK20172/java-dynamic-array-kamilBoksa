@@ -62,6 +62,17 @@ public class DynamicIntArray {
         intArray = result;
     }
 
+    public int find(int number) {
+        int match = 0;
+        for(int i : intArray) {
+            if(i == number) {
+                match = i;
+                break;
+            }
+        }
+        return match;
+    }
+
     @Override
     public String toString() {
         StringBuilder numbers = new StringBuilder(" ");
